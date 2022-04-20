@@ -13,7 +13,7 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: UserService,private cookieService: CookieService,private toastr: ToastrService, public snackbar: MatSnackBar,private router: Router) { }
+  constructor(private service: UserService,private cookieService: CookieService,private toastr: ToastrService, public snackbar: MatSnackBar,private router: Router,) { }
 
   formModel = {
     username: '',
@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
       },
       err => {
         if (err.status != 200) {
-             this.toastr.error('Incorrect username or password.', 'Authentication failed.');
+          this.snackbar.open("Incorrect username or password.", "try again");
+            // this.toastr.error('Incorrect username or password.', 'Authentication failed.');
           this.router.navigateByUrl('/user/login');
           
         }
