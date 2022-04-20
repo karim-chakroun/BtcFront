@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+      <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Nom: </strong>{{userDetails.nom}} </li>
+          <li class="list-group-item"><strong>Prenom: </strong>{{userDetails.prenom}} </li>
+          <li class="list-group-item"><strong>Email: </strong>{{userDetails.email}} </li>
+          <li class="list-group-item"><strong>Role: </strong>{{userDetails.rolee.roles}} </li>
+        </ul>
+      </div>
+    </div>
+  </div>
