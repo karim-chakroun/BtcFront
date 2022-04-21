@@ -30,6 +30,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
+import { TravelComponent } from './travel/travel.component';
+import { AddTravelComponent } from './add-travel/add-travel.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -44,6 +47,8 @@ import { AddpostsComponent } from './addposts/addposts.component';
     ProfilComponent,
     PostComponent,
     AddpostsComponent,
+    TravelComponent,
+    AddTravelComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import { AddpostsComponent } from './addposts/addposts.component';
     MatInputModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatDatepickerModule,
     MatIconModule,
     MatListModule,
     MatSelectModule,
