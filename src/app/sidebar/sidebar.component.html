@@ -1,0 +1,51 @@
+<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="image">
+                <img src="assets/sidebar/images/user.png" width="48" height="48" alt="User" />
+
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">asma abessi</div>
+
+                <div class="email">asma.abessi@esprit.tn</div>
+            </div>
+        </div>
+        <!-- #User Info -->
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MAIN NAVIGATION</li>
+                <li class="active">
+                    <a [routerLink]="['/home']">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a [routerLink]="['/travel']">
+                        <i class="material-icons">widgets</i>
+                        <span>Travel</span>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </div>
+        <!-- #Menu -->
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; 2020 - 2021 AdminBSB - Material Design.
+            </div>
+            <div class="version">
+                <b>Version: </b> 1.0.5
+            </div>
+        </div>
+        <!-- #Footer -->
+    </aside>
+</section>
+<router-outlet></router-outlet>

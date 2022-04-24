@@ -33,6 +33,15 @@ import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
 import { AddTravelComponent } from './add-travel/add-travel.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { InvitationComponent } from './invitation/invitation.component';
+import { InvitationsComponent } from './invitations/invitations.component';
+import { DataTableModule } from "ng2-data-table";
 
 
 @NgModule({
@@ -49,6 +58,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     AddpostsComponent,
     TravelComponent,
     AddTravelComponent,
+    SidebarComponent,
+    AdminNavComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    InvitationComponent,
+    InvitationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,8 +79,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatInputModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+    FontAwesomeModule,
     MatListModule,
     MatSelectModule,
     HttpClientModule,

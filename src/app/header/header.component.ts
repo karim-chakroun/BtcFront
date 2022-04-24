@@ -16,20 +16,26 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.getUserProfile().subscribe(
-      res =>{
-        this.userDetails = res;
-      },
-      err =>{
-        console.log(err);
-      }
+    if(localStorage.getItem('token') != null){
 
-    );
+      this.service.getUserProfile().subscribe(
+        res =>{
+          this.userDetails = res;
+        },
+        err =>{
+          console.log(err);
+        }
+  
+      );
+
+    }
+
+    
   }
 
   onLogout() {
-    //localStorage.removeItem('token');
-    this.cookieService.delete("token", '/');
+    localStorage.removeItem('token');
+    //this.cookieService.delete("token", '/');
     
     
     this.router.navigate(['/user/login']);
