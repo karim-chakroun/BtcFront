@@ -28,6 +28,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+import { ProjectComponent } from './project/project.component';
+import { TaskComponent } from './task/task.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
 
 
 @NgModule({
@@ -40,6 +43,9 @@ import { ProfilComponent } from './profil/profil.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+    ProjectComponent,
+    TaskComponent,
+    AddProjectComponent,
   ],
   imports: [
     BrowserModule,
