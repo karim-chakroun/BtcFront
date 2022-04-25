@@ -9,7 +9,8 @@ import { TravelComponent } from './travel/travel.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { UserComponent } from './user/user.component';
-
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
 const routes: Routes = [
 
 
@@ -20,10 +21,15 @@ const routes: Routes = [
   ]},
   {path:'home',component:HomeComponent},
   {path:'profil',component:ProfilComponent},
+
+  {path:'complainList',component:ComplainListComponent},
+  {path:'addcomplain',component:AddComplainComponent},
+
   {path:'post',component:PostComponent},
   {path:'travel',component:TravelComponent},
   {path:"changePassword/:id", component:ChangePasswordComponent},
   {path:'invitations',component:InvitationsComponent},
+
 ];
 
 @NgModule({
