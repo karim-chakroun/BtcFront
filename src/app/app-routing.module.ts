@@ -5,7 +5,8 @@ import { ProfilComponent } from './profil/profil.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { UserComponent } from './user/user.component';
-
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
 const routes: Routes = [
 
 
@@ -15,7 +16,9 @@ const routes: Routes = [
     {path:'login',component:LoginComponent}
   ]},
   {path:'home',component:HomeComponent},
-  {path:'profil',component:ProfilComponent}
+  {path:'profil',component:ProfilComponent},
+  {path:'complainList',component:ComplainListComponent},
+  {path:'addcomplain',component:AddComplainComponent}
 ];
 
 @NgModule({

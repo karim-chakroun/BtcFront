@@ -28,6 +28,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ProfilComponent } from './profil/profil.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+    ComplainListComponent,
+    AddComplainComponent,
   ],
   imports: [
     BrowserModule,
