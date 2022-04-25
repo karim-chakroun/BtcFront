@@ -28,6 +28,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
+
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -46,6 +50,7 @@ import {DataTablesModule} from 'angular-datatables';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +61,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
+    ComplainListComponent,
+    AddComplainComponent,
+
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -66,6 +75,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+
   ],
   imports: [
     BrowserModule,
