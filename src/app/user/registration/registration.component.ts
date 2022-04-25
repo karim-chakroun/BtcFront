@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/shared/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service:UserService,private toastr: ToastrService) { }
+  constructor(public service:UserService,private toastr: ToastrService,public snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,7 @@ export class RegistrationComponent implements OnInit {
                
         } else {
             this.toastr.error(res.message,'Registration failed.');
+            this.snackbar.open(res.message, "Registration failed");
             }
           });
         

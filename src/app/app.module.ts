@@ -28,8 +28,25 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
 import { ComplainListComponent } from './complain-list/complain-list.component';
 import { AddComplainComponent } from './add-complain/add-complain.component';
+
+import { PostComponent } from './post/post.component';
+import { AddpostsComponent } from './addposts/addposts.component';
+import { TravelComponent } from './travel/travel.component';
+import { AddTravelComponent } from './add-travel/add-travel.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { InvitationComponent } from './invitation/invitation.component';
+import { InvitationsComponent } from './invitations/invitations.component';
+import { DataTableModule } from "ng2-data-table";
+
 
 
 @NgModule({
@@ -42,8 +59,21 @@ import { AddComplainComponent } from './add-complain/add-complain.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
     ComplainListComponent,
     AddComplainComponent,
+
+    PostComponent,
+    AddpostsComponent,
+    TravelComponent,
+    AddTravelComponent,
+    SidebarComponent,
+    AdminNavComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    InvitationComponent,
+    InvitationsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +89,10 @@ import { AddComplainComponent } from './add-complain/add-complain.component';
     MatInputModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatDatepickerModule,
     MatIconModule,
+    FontAwesomeModule,
     MatListModule,
     MatSelectModule,
     HttpClientModule,
