@@ -47,6 +47,7 @@ import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,10 @@ import { DataTableModule } from "ng2-data-table";
     ProfilComponent,
     ComplainListComponent,
     AddComplainComponent,
+
+    ComplainListComponent,
+    AddComplainComponent,
+
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -69,6 +74,8 @@ import { DataTableModule } from "ng2-data-table";
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+
+
   ],
   imports: [
     BrowserModule,

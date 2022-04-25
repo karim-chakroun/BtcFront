@@ -23,10 +23,17 @@ const routes: Routes = [
   {path:'profil',component:ProfilComponent},
   {path:'complainList',component:ComplainListComponent},
   {path:'addcomplain',component:AddComplainComponent},
+
+
+  {path:'complainList',component:ComplainListComponent},
+  {path:'addcomplain',component:AddComplainComponent},
+
   {path:'post',component:PostComponent},
   {path:'travel',component:TravelComponent},
   {path:"changePassword/:id", component:ChangePasswordComponent},
   {path:'invitations',component:InvitationsComponent},
+
+
 ];
 
 @NgModule({
