@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeComponent } from './home/home.component';
+import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { PostComponent } from './post/post.component';
 import { ProfilComponent } from './profil/profil.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {path:'travel',component:TravelComponent},
   {path:"changePassword/:id", component:ChangePasswordComponent},
   {path:'invitations',component:InvitationsComponent},
+
+  {path:"invitation/:id", component:InvitationComponent},
+
+
 
 ];
 

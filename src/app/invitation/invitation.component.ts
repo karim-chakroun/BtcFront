@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { InvitationService } from '../shared/invitation.service';
 
 @Component({
   selector: 'app-invitation',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvitationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:InvitationService,private ac:ActivatedRoute) { }
 
+  myParam: number;
+
+  invitation;
   ngOnInit(): void {
+
+    this.ac.paramMap.subscribe(
+      res=>{
+        this.myParam=Number(res.get('id')),
+        this.service.acceptInvitation(this.myParam).subscribe(
+          res=>this.invitation=res
+          )});
   }
 
 }

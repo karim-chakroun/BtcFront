@@ -20,4 +20,8 @@ export class InvitationService {
   sendInvitationsExcel(){
     return this.http.get(this.BaseURI+ '/Invitation/add-InvitationsExcel' );
   }
+
+  acceptInvitation(id){
+    return this.http.get(this.BaseURI+ '/Invitation/retrieve-invitation/'+id );
+  }
 }
