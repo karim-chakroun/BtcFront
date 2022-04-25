@@ -8,7 +8,35 @@
           <li class="list-group-item"><strong>Prenom: </strong>{{userDetails.prenom}} </li>
           <li class="list-group-item"><strong>Email: </strong>{{userDetails.email}} </li>
           <li class="list-group-item"><strong>Role: </strong>{{userDetails.rolee.roles}} </li>
+          <li class="list-group-item"><strong>Image: </strong>{{userDetails.imageName}} </li>
+          <img [src]="dbImage">
         </ul>
       </div>
     </div>
   </div>
+
+
+  <div class="container">
+    <h1>Profile Photo</h1>
+    <br>
+    <form>
+        <div class="form-group">
+            <input type="file" (change)="onImageUpload($event)">
+            <input type="button" (click)="imageUploadAction()" value="Upload Image" class="btn1">
+        </div>
+
+
+        <div>
+            <output *ngIf=successResponse class="success"><b>{{successResponse}}</b></output>
+        </div>
+        <br>
+
+        
+        
+        
+        
+
+    </form>
+</div>
+
+  <app-footer></app-footer>
