@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InvitationService } from '../shared/invitation.service';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-invitations',
@@ -11,17 +12,22 @@ export class InvitationsComponent implements OnInit {
 
   constructor(private service:InvitationService,private snackbar:MatSnackBar) { }
   invitations;
+
+ 
+
+  dtTrigger: Subject<any> = new Subject<any>();
+  dtOptions: DataTables.Settings = {};
   ngOnInit(): void {
 
-    this.service.getInvitations().subscribe(
-      res =>{
-        this.invitations = res;
-      },
-      err =>{
-        console.log(err);
-      }
+    this.getInvitations();
 
-    );
+    this.dtOptions = {
+      pagingType: 'full_numbers'
+    };
+  }
+
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
   }
 
   resendInvitation(id){
@@ -37,11 +43,25 @@ export class InvitationsComponent implements OnInit {
     );
   }
 
+  getInvitations(){
+    this.service.getInvitations().subscribe(
+      res =>{
+        this.invitations = res;
+        // initiate our data table
+        this.dtTrigger.next();
+      },
+      err =>{
+        console.log(err);
+      }
+
+    );
+  }
+
   sendInvitationsExcel(){
     this.service.sendInvitationsExcel().subscribe(
       res =>{
         this.snackbar.open("Invitations sent!", "Ok");
-        this.ngOnInit();
+        this.getInvitations();
         
       },
       err =>{

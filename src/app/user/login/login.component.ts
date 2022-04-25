@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if(localStorage.getItem('token') != null)
-    this.router.navigateByUrl('/accueil');
+    this.router.navigateByUrl('/home');
   }
 
   forgotPassword(){

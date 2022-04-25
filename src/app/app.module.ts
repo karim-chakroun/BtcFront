@@ -42,6 +42,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
+import {DataTablesModule} from 'angular-datatables';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import { DataTableModule } from "ng2-data-table";
     MatDatepickerModule,
     MatIconModule,
     FontAwesomeModule,
+    MatProgressSpinnerModule,
     MatListModule,
+    DataTablesModule,
     MatSelectModule,
     HttpClientModule,
     ToastrModule.forRoot({
