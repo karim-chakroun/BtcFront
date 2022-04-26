@@ -44,4 +44,27 @@ export class TravelService {
 
 
   }
+
+  addParticipation(idVoyage,idParticipation){
+    var body = {
+      
+      
+    };
+    return this.http.post(this.BaseURI + '/voyage/add-participation/' + idVoyage+'/' + idParticipation , body);
+  
+
+
+  }
+
+  addVote(idVoyage,idEmployee,note){
+    var body = {
+      
+      
+    };
+    return this.http.post(this.BaseURI + '/voyage/add-vote/' + idVoyage+'/' + idEmployee +'/' + note, body);
+  
+
+
+  }
+  
 }

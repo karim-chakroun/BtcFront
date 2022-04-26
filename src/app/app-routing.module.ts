@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { BestpostComponent } from './bestpost/bestpost.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeComponent } from './home/home.component';
 import { InvitationComponent } from './invitation/invitation.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path:"changePassword/:id", component:ChangePasswordComponent},
   {path:'invitations',component:InvitationsComponent},
   {path:"invitation/:id", component:InvitationComponent},
+  {path:"mostlikedpost", component:BestpostComponent},
 ];
 
 @NgModule({

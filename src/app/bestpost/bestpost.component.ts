@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddpostsComponent } from '../addposts/addposts.component';
 import { CommentService } from '../shared/comment.service';
 import { ImageService } from '../shared/image.service';
 import { PostService } from '../shared/post.service';
 import { UserService } from '../shared/user.service';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  selector: 'app-bestpost',
+  templateUrl: './bestpost.component.html',
+  styleUrls: ['./bestpost.component.css']
 })
-export class PostComponent implements OnInit {
+export class BestpostComponent implements OnInit {
 
   constructor(private service:PostService,public dialog: MatDialog,private uService:UserService,private imageService:ImageService,public cService:CommentService) { }
   posts:any;
@@ -20,7 +19,8 @@ export class PostComponent implements OnInit {
   comments;
   postResponse: any;
   ngOnInit(): void {
-    this.service.getposts().subscribe(
+
+    this.service.bestlikes().subscribe(
       res =>{
         this.posts = res;
       },
@@ -29,9 +29,6 @@ export class PostComponent implements OnInit {
       }
 
     );
-
-   
-
     this.uService.getUserProfile().subscribe(
       res =>{
         this.userDetails = res,
@@ -42,47 +39,6 @@ export class PostComponent implements OnInit {
           }
     
         );
-      },
-      err =>{
-        console.log(err);
-      }
-
-    );
-  }
-
-  openDialog() {
-    const dref = this.dialog.open(AddpostsComponent);
-    
-    dref.afterClosed().subscribe(result => {
-      this.ngOnInit();
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
-  onSubmit(idPost,idClient){
-
-    this.cService.addComment(idPost,idClient).subscribe(
-      (res: any) => {
-        
-          
-          this.service.formModel.reset();
-          this.showComments();
-          //this.toastr.success('New user created!', 'Registration successful.');
-      },
-          err => {
-            console.log(err);
-          }
-        
-      
-      
-    );
-
-  }
-
-  showComments(){
-    this.cService.getComment().subscribe(
-      res =>{
-        this.comments = res;
       },
       err =>{
         console.log(err);
@@ -106,7 +62,5 @@ export class PostComponent implements OnInit {
       
     );
   }
- 
-
 
 }

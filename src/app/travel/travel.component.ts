@@ -43,8 +43,21 @@ export class TravelComponent implements OnInit {
     });
   }
 
-  Participate(){
-    
+  Participate(idVoyage,idParticipation){
+    this.service.addParticipation(idVoyage,idParticipation).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
   }
 
 }
