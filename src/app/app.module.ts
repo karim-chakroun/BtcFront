@@ -29,6 +29,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
 
+import { ProjectComponent } from './project/project.component';
+import { TaskComponent } from './task/task.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
+
 import { ComplainListComponent } from './complain-list/complain-list.component';
 import { AddComplainComponent } from './add-complain/add-complain.component';
 
@@ -45,6 +49,13 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
+import {DataTablesModule} from 'angular-datatables';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import { CommentComponent } from './comment/comment.component';
+import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
+import { BestpostComponent } from './bestpost/bestpost.component';
+
 
 
 
@@ -61,6 +72,12 @@ import { DataTableModule } from "ng2-data-table";
     ComplainListComponent,
     AddComplainComponent,
 
+
+    ProjectComponent,
+    TaskComponent,
+    AddProjectComponent,
+
+
     ComplainListComponent,
     AddComplainComponent,
 
@@ -74,6 +91,14 @@ import { DataTableModule } from "ng2-data-table";
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+    CommentComponent,
+    TravelEmployeeComponent,
+
+    BestpostComponent,
+
+
+
+
 
 
   ],
@@ -94,8 +119,14 @@ import { DataTableModule } from "ng2-data-table";
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+ 
     
+
+    FontAwesomeModule,
+    MatProgressSpinnerModule,
+ 
     MatListModule,
+    DataTablesModule,
     MatSelectModule,
     HttpClientModule,
     ToastrModule.forRoot({
