@@ -32,6 +32,27 @@ import { ProjectComponent } from './project/project.component';
 import { TaskComponent } from './task/task.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
 
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
+
+import { PostComponent } from './post/post.component';
+import { AddpostsComponent } from './addposts/addposts.component';
+import { TravelComponent } from './travel/travel.component';
+import { AddTravelComponent } from './add-travel/add-travel.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { InvitationComponent } from './invitation/invitation.component';
+import { InvitationsComponent } from './invitations/invitations.component';
+import { DataTableModule } from "ng2-data-table";
+import {DataTablesModule} from 'angular-datatables';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 
 @NgModule({
   declarations: [
@@ -43,9 +64,27 @@ import { AddProjectComponent } from './project/add-project/add-project.component
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
     ProjectComponent,
     TaskComponent,
     AddProjectComponent,
+
+
+    ComplainListComponent,
+    AddComplainComponent,
+
+    PostComponent,
+    AddpostsComponent,
+    TravelComponent,
+    AddTravelComponent,
+    SidebarComponent,
+    AdminNavComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
+    InvitationComponent,
+    InvitationsComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -61,8 +100,13 @@ import { AddProjectComponent } from './project/add-project/add-project.component
     MatInputModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatSidenavModule,
+    MatDatepickerModule,
     MatIconModule,
+    FontAwesomeModule,
+    MatProgressSpinnerModule,
     MatListModule,
+    DataTablesModule,
     MatSelectModule,
     HttpClientModule,
     ToastrModule.forRoot({

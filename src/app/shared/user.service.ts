@@ -46,7 +46,7 @@ export class UserService {
 
   roleMatch(allowedRoles:any): boolean {
     var isMatch = false;
-    var payLoad = JSON.parse(window.atob(this.cookieService.get('token').split('.')[1]));
+    var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
     var userRole = payLoad.role;
     console.log(payLoad.role);
     allowedRoles.forEach((element: any) => {
@@ -62,4 +62,20 @@ export class UserService {
     
     return this.http.get(this.BaseURI+ '/client/profile');
   }
+
+  forgotPassword(email){
+    
+    return this.http.get(this.BaseURI+ '/client/forgetPassword/'+ email);
+  }
+
+  changePassword(id) {
+    var body = {
+     
+      password: this.formModel.value.Passwords.Password,
+     
+    };
+    return this.http.put(this.BaseURI + '/client/modify-client/'+id, body);
+  }
+
+
 }

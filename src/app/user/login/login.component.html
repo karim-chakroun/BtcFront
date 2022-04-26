@@ -1,4 +1,4 @@
-<img src="/assets/img/logo.png" class="mx-auto d-block" width="200" height="100" alt="img" />
+<img src="/assets/img/logo.png" class="mx-auto d-block" width="200" height="130" alt="img" />
 <div class="container">
     <form #form="ngForm" class="mb-4" autocomplete="on" (submit)="onSubmit(form)">
         <div class="form-group">
@@ -17,5 +17,9 @@
             </div>
         </div>
     </form>
+    <p>
+        <a [routerLink]="" (click)="openDialog()">Forgot password?</a>
+    </p>
+    
 
 </div>

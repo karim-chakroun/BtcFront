@@ -1,0 +1,28 @@
+<app-header></app-header>
+<button (click)="openDialog()" mat-raised-button color="primary">Add Post</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">depVille</th>
+        <th scope="col">desVille</th>
+        <th scope="col">dateDep</th>
+        <th scope="col">dateDest</th>
+        <th scope="col">dateRetour</th>
+        <th scope="col">nbIntervenant</th>
+        <th scope="col">object</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let travel of travels">
+        
+        <td>{{travel.depVille}}</td>
+        <td>{{travel.desVille}}</td>
+        <td>{{travel.dateDep}}</td>
+        <td>{{travel.dateDest}}</td>
+        <td>{{travel.dateRetour}}</td>
+        <td>{{travel.nbIntervenant}}</td>
+        <td>{{travel.object}}</td>
+      </tr>
+     
+    </tbody>
+  </table>

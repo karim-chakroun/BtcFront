@@ -13,16 +13,16 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (  this.cookieService.get('token') != null) {
+        if (  localStorage.getItem('token') != null) {
             const clonedReq = req.clone({
-                headers: req.headers.set('Authorization', 'Bearer ' +  this.cookieService.get('token'))
+                headers: req.headers.set('Authorization', 'Bearer ' +  localStorage.getItem('token'))
             });
             return next.handle(clonedReq).pipe(
                 tap(
                     succ => { },
                     err => {
                         if (err.status == 401){
-                            this.cookieService.delete('token');
+                            localStorage.removeItem('token');
                             this.router.navigateByUrl('/etry/user/login');
                         }
                         else if(err.status == 403)
