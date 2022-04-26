@@ -44,6 +44,9 @@ import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
 import {DataTablesModule} from 'angular-datatables';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CommentComponent } from './comment/comment.component';
+import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
+
 
 
 @NgModule({
@@ -66,6 +69,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+    CommentComponent,
+    TravelEmployeeComponent,
   ],
   imports: [
     BrowserModule,
