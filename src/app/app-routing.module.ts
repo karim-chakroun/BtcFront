@@ -31,6 +31,9 @@ const routes: Routes = [
   ]},
   {path:'home',component:HomeComponent},
   {path:'profil',component:ProfilComponent},
+  {path:'complainList',component:ComplainListComponent},
+  {path:'addcomplain',component:AddComplainComponent},
+
 
 
   {path:'projects', component:ProjectComponent},
@@ -46,6 +49,8 @@ const routes: Routes = [
   {path:"changePassword/:id", component:ChangePasswordComponent},
   {path:'invitations',component:InvitationsComponent},
 
+ 
+
   {path:"invitation/:id", component:InvitationComponent},
 
 
@@ -57,6 +62,7 @@ const routes: Routes = [
 
 
 
+ 
 
 ];
 

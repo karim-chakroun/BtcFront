@@ -44,7 +44,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { InvitationComponent } from './invitation/invitation.component';
@@ -70,6 +69,8 @@ import { BestpostComponent } from './bestpost/bestpost.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+    ComplainListComponent,
+    AddComplainComponent,
 
 
     ProjectComponent,
@@ -99,6 +100,7 @@ import { BestpostComponent } from './bestpost/bestpost.component';
 
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -117,8 +119,12 @@ import { BestpostComponent } from './bestpost/bestpost.component';
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+ 
+    
+
     FontAwesomeModule,
     MatProgressSpinnerModule,
+ 
     MatListModule,
     DataTablesModule,
     MatSelectModule,
