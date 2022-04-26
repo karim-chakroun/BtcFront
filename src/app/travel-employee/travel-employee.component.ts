@@ -35,8 +35,102 @@ export class TravelEmployeeComponent implements OnInit {
 
   
 
-  Participate(){
-    
+  Participate(idVoyage,idParticipation){
+    this.service.addParticipation(idVoyage,idParticipation).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
   }
+  Vote1(idVoyage,idEmployee,note){
+    this.service.addVote(idVoyage,idEmployee,note).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
+  Vote2(idVoyage,idEmployee,note){
+    this.service.addVote(idVoyage,idEmployee,note).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
+  Vote3(idVoyage,idEmployee,note){
+    this.service.addVote(idVoyage,idEmployee,note).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
+  Vote4(idVoyage,idEmployee,note){
+    this.service.addVote(idVoyage,idEmployee,note).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
+  Vote5(idVoyage,idEmployee,note){
+    this.service.addVote(idVoyage,idEmployee,note).subscribe(
+      (res: any) => {
+        
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
+  
 
 }

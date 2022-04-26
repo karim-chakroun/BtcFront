@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="container">
     <button (click)="openDialog()" mat-raised-button color="primary">Add Post</button>
-
+    <button routerLink="/mostlikedpost" routerLinkActive="active" mat-raised-button color="primary">most liked posts</button>
     <div *ngFor="let p of posts">
         <p>
             <mat-card class="example-card">
@@ -13,7 +13,7 @@
 
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-button>LIKE</button>
+                    <button (click)="addlikes(p.idPost,userDetails.idClient)"mat-button>LIKE</button>
                     <button mat-button (click)="showComments()">LEAVE A COMMENT</button>
                 </mat-card-actions>
 

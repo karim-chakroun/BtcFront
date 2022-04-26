@@ -55,6 +55,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { CommentComponent } from './comment/comment.component';
 import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
+import { BestpostComponent } from './bestpost/bestpost.component';
 
 
 
@@ -91,6 +92,10 @@ import { TravelEmployeeComponent } from './travel-employee/travel-employee.compo
     InvitationsComponent,
     CommentComponent,
     TravelEmployeeComponent,
+
+    BestpostComponent,
+
+
 
 
 
