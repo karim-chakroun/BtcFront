@@ -28,6 +28,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
+import { ProjectComponent } from './project/project.component';
+import { TaskComponent } from './task/task.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
+
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
+
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -44,9 +52,11 @@ import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
 import {DataTablesModule} from 'angular-datatables';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { CommentComponent } from './comment/comment.component';
 import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
 import { BestpostComponent } from './bestpost/bestpost.component';
+
 
 
 
@@ -60,6 +70,16 @@ import { BestpostComponent } from './bestpost/bestpost.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
+
+    ProjectComponent,
+    TaskComponent,
+    AddProjectComponent,
+
+
+    ComplainListComponent,
+    AddComplainComponent,
+
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -72,7 +92,13 @@ import { BestpostComponent } from './bestpost/bestpost.component';
     InvitationsComponent,
     CommentComponent,
     TravelEmployeeComponent,
+
     BestpostComponent,
+
+
+
+
+
   ],
   imports: [
     BrowserModule,
