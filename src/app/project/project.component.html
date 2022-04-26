@@ -1,0 +1,19 @@
+<app-header></app-header>
+<table>
+<tr><th>
+    description:
+</th>
+<th>nom:</th>
+<th>date debut:</th>
+<th>operations</th>
+</tr>
+<tr *ngFor="let u of listProjects">
+    <td >{{u.description}}</td>
+    <td>{{u.nom}}</td>
+    <td>{{u.dateDebut}}</td>
+    <td> <button (click)="deleteproject(u.idProject)" class="btn btn-success" >delete</button></td>
+    
+</tr>
+</table>
+  
+    

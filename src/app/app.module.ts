@@ -28,6 +28,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+import { ProjectComponent } from './project/project.component';
+import { TaskComponent } from './task/task.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
 
 import { ComplainListComponent } from './complain-list/complain-list.component';
 import { AddComplainComponent } from './add-complain/add-complain.component';
@@ -62,6 +65,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HomeComponent,
     ProfilComponent,
 
+    ProjectComponent,
+    TaskComponent,
+    AddProjectComponent,
+
+
     ComplainListComponent,
     AddComplainComponent,
 
@@ -75,6 +83,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+
 
   ],
   imports: [
