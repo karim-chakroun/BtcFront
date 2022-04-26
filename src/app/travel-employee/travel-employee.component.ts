@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
-import { AddTravelComponent } from '../add-travel/add-travel.component';
 import { TravelService } from '../shared/travel.service';
 
 @Component({
-  selector: 'app-travel',
-  templateUrl: './travel.component.html',
-  styleUrls: ['./travel.component.css']
+  selector: 'app-travel-employee',
+  templateUrl: './travel-employee.component.html',
+  styleUrls: ['./travel-employee.component.css']
 })
-export class TravelComponent implements OnInit {
+export class TravelEmployeeComponent implements OnInit {
 
   constructor(private service:TravelService,public dialog: MatDialog) { }
 
@@ -34,14 +33,7 @@ export class TravelComponent implements OnInit {
     };
   }
 
-  openDialog() {
-    const dref = this.dialog.open(AddTravelComponent);
-    
-    dref.afterClosed().subscribe(result => {
-      this.ngOnInit();
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+  
 
   Participate(){
     

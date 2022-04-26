@@ -28,6 +28,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
 import { ProjectComponent } from './project/project.component';
 import { TaskComponent } from './task/task.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
@@ -52,6 +53,10 @@ import { DataTableModule } from "ng2-data-table";
 import {DataTablesModule} from 'angular-datatables';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
+import { CommentComponent } from './comment/comment.component';
+import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
+
+
 
 
 @NgModule({
@@ -64,6 +69,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
 
     ProjectComponent,
     TaskComponent,
@@ -83,6 +89,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+    CommentComponent,
+    TravelEmployeeComponent,
+
 
 
   ],

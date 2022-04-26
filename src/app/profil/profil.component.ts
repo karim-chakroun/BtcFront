@@ -11,7 +11,7 @@ import { UserService } from '../shared/user.service';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor(private router:Router,private service:UserService,private httpClient: HttpClient,private imageService:ImageService) { }
+  constructor(private router:Router,public service:UserService,private httpClient: HttpClient,private imageService:ImageService) { }
 
   dbImage: any; 
   postResponse: any;

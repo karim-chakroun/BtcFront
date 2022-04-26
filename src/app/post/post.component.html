@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container" >
+<div class="container">
     <button (click)="openDialog()" mat-raised-button color="primary">Add Post</button>
 
     <div *ngFor="let p of posts">
@@ -14,10 +14,36 @@
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-button>LIKE</button>
-                    <button mat-button>SHARE</button>
+                    <button mat-button (click)="showComments()">LEAVE A COMMENT</button>
                 </mat-card-actions>
+
+                <div *ngFor="let c of comments">
+                
+<mat-card class="example-card" *ngIf="c.posts.idPost == p.idPost">
+
+    {{c.body}}
+    {{c.posts.idPost}}
+</mat-card>
+</div>
+
+
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Leave a comment</mat-label>
+
+
+                    <form class="example-form" [formGroup]="cService.formModel"
+                        (submit)="onSubmit(p.idPost,userDetails.idClient)">
+                        <div class="form-group">
+                            <textarea matInput placeholder="Ex. It makes me feel..." formControlName="Bb"></textarea>
+                        </div>
+                        <button type="submit" mat-raised-button color="warn">Warn</button>
+                </form>
+                </mat-form-field>
+                
             </mat-card>
         </p>
+
     </div>
 
 </div>
