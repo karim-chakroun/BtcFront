@@ -28,6 +28,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
+import { ProjectComponent } from './project/project.component';
+import { TaskComponent } from './task/task.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
+
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
+
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -36,7 +44,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { InvitationComponent } from './invitation/invitation.component';
@@ -44,12 +51,14 @@ import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
 import {DataTablesModule} from 'angular-datatables';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { CommentComponent } from './comment/comment.component';
 import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
 import { BestpostComponent } from './bestpost/bestpost.component';
 import { ChoseDomainComponent } from './chose-domain/chose-domain.component';
 import { ChoseProfessionComponent } from './chose-profession/chose-profession.component';
 import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -65,6 +74,18 @@ import {MatMenuModule} from '@angular/material/menu';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+    ComplainListComponent,
+    AddComplainComponent,
+
+
+    ProjectComponent,
+    TaskComponent,
+    AddProjectComponent,
+
+
+    ComplainListComponent,
+    AddComplainComponent,
+
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -77,11 +98,21 @@ import {MatMenuModule} from '@angular/material/menu';
     InvitationsComponent,
     CommentComponent,
     TravelEmployeeComponent,
+
     BestpostComponent,
+ 
     ChoseDomainComponent,
     ChoseProfessionComponent,
     
     
+
+
+
+
+
+
+
+
   ],
   imports: [
     MatMenuModule,
@@ -101,8 +132,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+ 
+    
+
     FontAwesomeModule,
     MatProgressSpinnerModule,
+ 
     MatListModule,
     DataTablesModule,
     MatSelectModule,
