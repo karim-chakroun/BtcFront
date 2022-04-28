@@ -106,6 +106,22 @@ export class PostComponent implements OnInit {
       
     );
   }
+  deletepost(idPost){
+    this.service.deletepost(idPost).subscribe(
+      (res: any) => {
+        this.ngOnInit();
+          
+          //this.service.formModel.reset();
+          //this.toastr.success('New user created!', 'Registration successful.');
+      },
+          err => {
+            console.log(err);
+          }
+        
+      
+      
+    );
+  }
  
 
 

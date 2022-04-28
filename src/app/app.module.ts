@@ -47,6 +47,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { CommentComponent } from './comment/comment.component';
 import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
 import { BestpostComponent } from './bestpost/bestpost.component';
+import { ChoseDomainComponent } from './chose-domain/chose-domain.component';
+import { ChoseProfessionComponent } from './chose-profession/chose-profession.component';
+import {MatMenuModule} from '@angular/material/menu';
+
+
 
 
 
@@ -73,8 +78,13 @@ import { BestpostComponent } from './bestpost/bestpost.component';
     CommentComponent,
     TravelEmployeeComponent,
     BestpostComponent,
+    ChoseDomainComponent,
+    ChoseProfessionComponent,
+    
+    
   ],
   imports: [
+    MatMenuModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

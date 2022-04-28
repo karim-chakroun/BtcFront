@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvitationComponent } from './invitation.component';
+import { ChoseDomainComponent } from './chose-domain.component';
 
-describe('InvitationComponent', () => {
-  let component: InvitationComponent;
-  let fixture: ComponentFixture<InvitationComponent>;
+describe('ChoseDomainComponent', () => {
+  let component: ChoseDomainComponent;
+  let fixture: ComponentFixture<ChoseDomainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvitationComponent ]
+      declarations: [ ChoseDomainComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InvitationComponent);
+    fixture = TestBed.createComponent(ChoseDomainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

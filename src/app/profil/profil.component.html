@@ -28,7 +28,7 @@
 
 
 <div class="container">
-  <div class="main-body">
+  <div class="main-body" *ngIf="userDetails">
 
     <!-- Breadcrumb -->
 
@@ -134,18 +134,37 @@
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Domaine d'activité</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                <div *ngIf="userDetails.domain==null">
+            <div *ngIf="service.roleMatch(['ROLE_EMPLOYEE'])">
 
-                  <button mat-stroked-button color="primary">Chose your Domain</button>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Domaine d'activité</h6>
                 </div>
-                {{userDetails.domain}}
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="userDetails.profession==null">
+  
+                    <button mat-stroked-button color="primary" >Chose your Profession</button>
+                  </div>
+                  {{userDetails.profession}}
+                </div>
               </div>
             </div>
+            <div *ngIf="service.roleMatch(['ROLE_ENTREPRISE'])">
+
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Domaine d'activité</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <div *ngIf="userDetails.domain==null">
+  
+                    <button mat-stroked-button color="primary" (click)="openDialog()">Chose your Domain</button>
+                  </div>
+                  {{userDetails.domain}}
+                </div>
+              </div>
+            </div>
+            
             <hr>
             <div class="row">
               <div class="col-sm-3">

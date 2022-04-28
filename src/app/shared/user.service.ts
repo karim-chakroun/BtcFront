@@ -14,6 +14,7 @@ export class UserService {
 
   formModel = this.fb.group({
    
+    Domain: [''],
     Email: ['', Validators.email],
     Nom: ['', Validators.required],
     Prenom: ['', Validators.required],
@@ -36,6 +37,17 @@ export class UserService {
       dateNaissance: this.formModel.value.Birthday,
     };
     return this.http.post(this.BaseURI + '/client/register', body);
+  }
+
+  registerEmp(id) {
+    var body = {
+      nom: this.formModel.value.Nom,
+      email: this.formModel.value.Email,
+      prenom: this.formModel.value.Prenom,
+      password: this.formModel.value.Passwords.Password,
+      dateNaissance: this.formModel.value.Birthday,
+    };
+    return this.http.post(this.BaseURI + '/client/registerEmp/'+id, body);
   }
 
 
@@ -74,7 +86,16 @@ export class UserService {
       password: this.formModel.value.Passwords.Password,
      
     };
-    return this.http.put(this.BaseURI + '/client/modify-client/'+id, body);
+    return this.http.put(this.BaseURI + '/client/updatePassword/'+id, body);
+  }
+
+  modifyDomain(id) {
+    var body = {
+     
+      domain: this.formModel.value.Domain,
+     
+    };
+    return this.http.put(this.BaseURI + '/client/updateDomain/'+id, body);
   }
 
 

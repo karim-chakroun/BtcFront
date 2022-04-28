@@ -46,5 +46,7 @@ export class PostService {
   bestlikes(){
     return this.http.get(this.BaseURI+ '/post/retrive-Posts-with-most-likes');
   }
-
+  deletepost(id){
+    return this.http.delete(this.BaseURI+ '/post/remove-post/' + id);
+  }
 }
