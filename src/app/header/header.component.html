@@ -55,8 +55,15 @@
 
 
     </div>
+    <form >
+        <mat-form-field class="example-full-width" appearance="fill">
+            <input matInput name="title" type="text" required ngModel #x="ngModel" (keyup.enter)="search(x.value)">
+          </mat-form-field>
+        
+    </form>
 
     <div class="my-2 my-sm-0" *ngIf="userDetails">
+        
         <span class="flex-spacer"></span>
         <a mat-raised-button color="warn" (click)="onLogout()"><span class="fa fa-sign-in fa-lg"></span> Logout</a>
     </div>

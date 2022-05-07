@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { Observable } from 'rxjs';
+import { Client } from '../models/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -70,9 +72,9 @@ export class UserService {
     return isMatch;
   }
 
-  getUserProfile(){
+  getUserProfile(): Observable<Client>{
     
-    return this.http.get(this.BaseURI+ '/client/profile');
+    return this.http.get<Client>(this.BaseURI+ '/client/profile');
   }
 
   forgotPassword(email){
@@ -96,6 +98,11 @@ export class UserService {
      
     };
     return this.http.put(this.BaseURI + '/client/updateDomain/'+id, body);
+  }
+
+  searchByName(name:string): Observable<Client[]>{
+    return this.http.get<Client[]>(this.BaseURI+ '/client/retrieve-client-by-name/'+name);
+
   }
 
 

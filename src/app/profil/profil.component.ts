@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ChoseDomainComponent } from '../chose-domain/chose-domain.component';
+import { Client } from '../models/Client';
 import { ImageService } from '../shared/image.service';
 import { UserService } from '../shared/user.service';
 
@@ -21,7 +22,7 @@ export class ProfilComponent implements OnInit {
   image: any;
   uploadedImage: File; 
 
-  userDetails:any;
+  userDetails:Client;
 
   ngOnInit(): void {
 

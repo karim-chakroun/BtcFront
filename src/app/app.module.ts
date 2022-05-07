@@ -111,12 +111,11 @@ import {MatMenuModule} from '@angular/material/menu';
       progressBar: true
     }),
   ],
-  providers: [UserService,
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
+  providers: [UserService, {
+    provide : HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })
