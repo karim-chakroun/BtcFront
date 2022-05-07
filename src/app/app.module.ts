@@ -31,7 +31,8 @@ import { ProfilComponent } from './profil/profil.component';
 
 import { ComplainListComponent } from './complain-list/complain-list.component';
 import { AddComplainComponent } from './add-complain/add-complain.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator'; 
+import {DragDropModule} from '@angular/cdk/drag-drop'; 
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -45,6 +46,12 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { AddquizComponent } from './addquiz/addquiz.component';
+import { QuestionComponent } from './question/question.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ChangeBgDirective } from './change-bg.directive';
 
 
 
@@ -74,6 +81,12 @@ import { DataTableModule } from "ng2-data-table";
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+    QuizListComponent,
+    QuizComponent,
+    AddquizComponent,
+    QuestionComponent,
+    WelcomeComponent,
+    ChangeBgDirective,
 
 
   ],
@@ -98,6 +111,8 @@ import { DataTableModule } from "ng2-data-table";
     MatListModule,
     MatSelectModule,
     HttpClientModule,
+    MatPaginatorModule,
+    DragDropModule,
     ToastrModule.forRoot({
       progressBar: true
     }),

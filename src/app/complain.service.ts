@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';  
 import { Observable } from 'rxjs';  
+import { Complain } from './complain';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,13 @@ export class ComplainService {
     return this.http.get(`${this.baseUrl}`+'/complains/getallcomplains');  
   }  
   
-  createComplain(Complain: object): Observable<object> {  
+  createComplain(Complain: Complain
+    
+    
+    
+    
+    
+    ): Observable<object> {  
     return this.http.post(`${this.baseUrl}`+'/complains/addcomplain/4', Complain);  
   }  
   updateComplain(id: number, value: any): Observable<Object> {

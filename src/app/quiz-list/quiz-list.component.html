@@ -1,0 +1,46 @@
+<app-header></app-header>
+<br>
+<div 
+class="container deletingspace"
+cdkDropList
+id="deletingcon" 
+(cdkDropListDropped)="drop($event)"
+[cdkDropListData]="quizs">
+<div cdkDrag *ngFor="let quiz of quizs">
+</div>
+</div>
+<div class="container">
+    <div class="row" 
+    cdkDropList 
+    id="quizlist"
+    [cdkDropListConnectedTo]="['deletingcon']"
+    [cdkDropListData]="quizs"
+    (cdkDropListDropped)="drop($event)">
+    <div class="col-6 col-md-4" *ngFor="let quiz of quizs"  cdkDrag [cdkDragData]="quiz" >
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{quiz.typeQuiz}}</mat-card-title>
+          <mat-card-subtitle>Type quiz</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            you will pass this <b>{{quiz.nameQuiz}}</b> Quiz and you will get graded based on your knowlge this will be taken in consideration
+            with <b>{{quiz.numQuestion}}</b> number of questions, good luck to you
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button  (click)="onSelect(quiz)"mat-button>pass</button>
+          <button  (click)="deletequiz(quiz.idQuiz)" class='btn btn-primary'>Delete</button>  
+        </mat-card-actions>
+      </mat-card>
+      </div>
+    </div>
+    <mat-paginator #paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page">
+    </mat-paginator>
+
+</div>
