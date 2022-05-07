@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComplainListComponent } from './complain-list.component';
+import { ChoseDomainComponent } from './chose-domain.component';
 
-describe('ComplainListComponent', () => {
-  let component: ComplainListComponent;
-  let fixture: ComponentFixture<ComplainListComponent>;
+describe('ChoseDomainComponent', () => {
+  let component: ChoseDomainComponent;
+  let fixture: ComponentFixture<ChoseDomainComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComplainListComponent ]
+      declarations: [ ChoseDomainComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ComplainListComponent);
+    fixture = TestBed.createComponent(ChoseDomainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

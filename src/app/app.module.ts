@@ -28,10 +28,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
-
-import { ComplainListComponent } from './complain-list/complain-list.component';
-import { AddComplainComponent } from './add-complain/add-complain.component';
-
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -45,6 +41,16 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
+import {DataTablesModule} from 'angular-datatables';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { CommentComponent } from './comment/comment.component';
+import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
+import { BestpostComponent } from './bestpost/bestpost.component';
+import { ChoseDomainComponent } from './chose-domain/chose-domain.component';
+import { ChoseProfessionComponent } from './chose-profession/chose-profession.component';
+import {MatMenuModule} from '@angular/material/menu';
+
+
 
 
 
@@ -58,11 +64,14 @@ import { DataTableModule } from "ng2-data-table";
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
     ComplainListComponent,
     AddComplainComponent,
 
     ComplainListComponent,
     AddComplainComponent,
+
+
 
     PostComponent,
     AddpostsComponent,
@@ -76,8 +85,19 @@ import { DataTableModule } from "ng2-data-table";
     InvitationsComponent,
 
 
+
+
+    CommentComponent,
+    TravelEmployeeComponent,
+    BestpostComponent,
+    ChoseDomainComponent,
+    ChoseProfessionComponent,
+    
+    
+
   ],
   imports: [
+    MatMenuModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -94,20 +114,25 @@ import { DataTableModule } from "ng2-data-table";
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+
     
+
+    FontAwesomeModule,
+    MatProgressSpinnerModule,
+
     MatListModule,
+    DataTablesModule,
     MatSelectModule,
     HttpClientModule,
     ToastrModule.forRoot({
       progressBar: true
     }),
   ],
-  providers: [UserService,
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    }
+  providers: [UserService, {
+    provide : HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

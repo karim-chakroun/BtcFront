@@ -33,4 +33,20 @@ export class PostService {
 
 
   }
+  addLike(idPost,idClient){
+     
+    var body = {
+      
+      
+    };
+    return this.http.post(this.BaseURI + '/like/add-Comment/' + idPost+'/' + idClient , body);
+  
+
+  }
+  bestlikes(){
+    return this.http.get(this.BaseURI+ '/post/retrive-Posts-with-most-likes');
+  }
+  deletepost(id){
+    return this.http.delete(this.BaseURI+ '/post/remove-post/' + id);
+  }
 }

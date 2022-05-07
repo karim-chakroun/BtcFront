@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+import { Observable } from 'rxjs';
+import { Client } from '../models/Client';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,7 @@ export class UserService {
 
   formModel = this.fb.group({
    
+    Domain: [''],
     Email: ['', Validators.email],
     Nom: ['', Validators.required],
     Prenom: ['', Validators.required],
@@ -38,6 +41,17 @@ export class UserService {
     return this.http.post(this.BaseURI + '/client/register', body);
   }
 
+  registerEmp(id) {
+    var body = {
+      nom: this.formModel.value.Nom,
+      email: this.formModel.value.Email,
+      prenom: this.formModel.value.Prenom,
+      password: this.formModel.value.Passwords.Password,
+      dateNaissance: this.formModel.value.Birthday,
+    };
+    return this.http.post(this.BaseURI + '/client/registerEmp/'+id, body);
+  }
+
 
 
   login(formData:any) {
@@ -58,9 +72,9 @@ export class UserService {
     return isMatch;
   }
 
-  getUserProfile(){
+  getUserProfile(): Observable<Client>{
     
-    return this.http.get(this.BaseURI+ '/client/profile');
+    return this.http.get<Client>(this.BaseURI+ '/client/profile');
   }
 
   forgotPassword(email){
@@ -74,7 +88,21 @@ export class UserService {
       password: this.formModel.value.Passwords.Password,
      
     };
-    return this.http.put(this.BaseURI + '/client/modify-client/'+id, body);
+    return this.http.put(this.BaseURI + '/client/updatePassword/'+id, body);
+  }
+
+  modifyDomain(id) {
+    var body = {
+     
+      domain: this.formModel.value.Domain,
+     
+    };
+    return this.http.put(this.BaseURI + '/client/updateDomain/'+id, body);
+  }
+
+  searchByName(name:string): Observable<Client[]>{
+    return this.http.get<Client[]>(this.BaseURI+ '/client/retrieve-client-by-name/'+name);
+
   }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Client } from '../models/Client';
 import { UserService } from '../shared/user.service';
 
 @Component({
@@ -46,6 +47,20 @@ export class HeaderComponent implements OnInit {
    // v2.style.visibility = 'hidden';
     // var f = document.getElementById('loginBtn');
        //f.style.visibility = 'hidden';
+  }
+  searchUsers:Client[];
+  search(name:string){
+    console.log("search work")
+    this.service.searchByName(name).subscribe(
+      res =>{
+        this.searchUsers = res;
+        console.log('usernametest',this.searchUsers);
+      },
+      err =>{
+        console.log(err);
+      }
+
+    );
   }
 
 }

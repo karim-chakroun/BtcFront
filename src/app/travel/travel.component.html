@@ -1,6 +1,8 @@
 <app-header></app-header>
-<button (click)="openDialog()" mat-raised-button color="primary">Add Post</button>
-<table class="table">
+
+<div class="container">
+<button (click)="openDialog()" mat-raised-button color="primary">Add Travel</button>
+<table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
     <thead>
       <tr>
         <th scope="col">depVille</th>
@@ -10,6 +12,7 @@
         <th scope="col">dateRetour</th>
         <th scope="col">nbIntervenant</th>
         <th scope="col">object</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -22,7 +25,9 @@
         <td>{{travel.dateRetour}}</td>
         <td>{{travel.nbIntervenant}}</td>
         <td>{{travel.object}}</td>
+        
       </tr>
      
     </tbody>
   </table>
+</div>
