@@ -8,7 +8,7 @@ import { interval } from 'rxjs';
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
-  quizs:Quiz;
+  quizs:Quiz =new Quiz;
   result:any;
   public currentquestion:number=0;
   public point:number=0;
@@ -24,7 +24,7 @@ export class QuestionComponent implements OnInit {
     this.quizService.makequiz().subscribe(data =>{  
       this.quizs =data;  
       console.log(this.quizs);
-      console.log(this.quizs.questions);
+      console.log(typeof(this.quizs.questions));
 
       })  
       this.startCounter();
