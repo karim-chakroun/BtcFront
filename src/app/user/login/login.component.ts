@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
   durationInSeconds = 5;
 
   ngOnInit(): void {
-    if(localStorage.getItem('token') != null)
+    //if(localStorage.getItem('token') != null)
+    if (this.cookieService.get('token'))
     this.router.navigateByUrl('/home');
   }
 
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {
-        localStorage.setItem('token', res.data);
+        //localStorage.setItem('token', res.data);
+        this.cookieService.set('token', res.data, 1, '/','localhost', true, "Lax");
         this.snackbar.open("connected", "welcom!",{
           duration: this.durationInSeconds * 1000,
         });

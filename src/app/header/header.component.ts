@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(localStorage.getItem('token') != null){
+    if(this.cookieService.get('token') != null){
 
       this.service.getUserProfile().subscribe(
         res =>{
@@ -35,8 +35,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout() {
-    localStorage.removeItem('token');
-    //this.cookieService.delete("token", '/');
+    //localStorage.removeItem('token');
+    this.cookieService.delete("token", '/');
     
     
     this.router.navigate(['/user/login']);
@@ -55,6 +55,9 @@ export class HeaderComponent implements OnInit {
       res =>{
         this.searchUsers = res;
         console.log('usernametest',this.searchUsers);
+        //localStorage.setItem('userSearch', JSON.stringify(this.searchUsers));
+        this.router.navigate(['/userSearch/'+name]);
+        
       },
       err =>{
         console.log(err);

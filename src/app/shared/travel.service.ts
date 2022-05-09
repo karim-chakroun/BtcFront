@@ -66,5 +66,13 @@ export class TravelService {
 
 
   }
+
+  getTravelsById(id){
+    return this.http.get(this.BaseURI+ '/voyage/retrieve-voyage/'+id);
+  }
+
+  getMoyenneTravels(id){
+    return this.http.get(this.BaseURI+ '/voyage/getMoyenneNote/'+id);
+  }
   
 }

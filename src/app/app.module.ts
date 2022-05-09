@@ -50,6 +50,9 @@ import { BestpostComponent } from './bestpost/bestpost.component';
 import { ChoseDomainComponent } from './chose-domain/chose-domain.component';
 import { ChoseProfessionComponent } from './chose-profession/chose-profession.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { SearchUserComponent } from './search-user/search-user.component';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { TravelDetailComponent } from './travel-detail/travel-detail.component';
 
 
 
@@ -80,6 +83,9 @@ import {MatMenuModule} from '@angular/material/menu';
     BestpostComponent,
     ChoseDomainComponent,
     ChoseProfessionComponent,
+    SearchUserComponent,
+    ProfilesComponent,
+    TravelDetailComponent,
     
     
   ],

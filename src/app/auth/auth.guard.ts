@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-    if ( localStorage.getItem('token') != null){
+    if ( this.cookieService.get('token') != null){
       let roles = next.data['permittedRoles'] as Array<string>;
      console.log(roles);
      // console.log(this.service.roleMatch(roles));

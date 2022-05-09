@@ -16,12 +16,18 @@ export class TravelEmployeeComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
 
   travels:any;
+  moyenneVote;
   ngOnInit(): void {
 
     this.service.getTravels().subscribe(
       res =>{
+        
         this.travels = res;
         this.dtTrigger.next();
+
+
+        console.log("idv"+this.travels.idVoyage)
+        
       },
       err =>{
         console.log(err);
@@ -130,6 +136,15 @@ export class TravelEmployeeComponent implements OnInit {
       
       
     );
+  }
+
+  getMoyenne(idVoyage){
+    this.service.getMoyenneTravels(idVoyage).subscribe(
+      result =>{
+        this.moyenneVote = result;
+      }
+    );
+    return this.moyenneVote;
   }
   
 

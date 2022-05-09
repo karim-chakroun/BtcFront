@@ -14,7 +14,7 @@
         <th scope="col">object</th>
         <th scope="col">Action</th>
         <th scope="col">Vote</th>
-        <th scope="col">Moyenne votes</th>
+        <th scope="col">Travel Details</th>
       </tr>
     </thead>
     <tbody>
@@ -52,7 +52,7 @@
 
 
         </td>
-        <td>{{travel.object}}</td>
+        <td> <a mat-card-title [routerLink]="['/travelDetails',travel.idVoyage]">Details</a> </td>
       </tr>
 
     </tbody>

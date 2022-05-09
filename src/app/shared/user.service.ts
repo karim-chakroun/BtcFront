@@ -60,7 +60,7 @@ export class UserService {
 
   roleMatch(allowedRoles:any): boolean {
     var isMatch = false;
-    var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    var payLoad = JSON.parse(window.atob(this.cookieService.get('token').split('.')[1]));
     var userRole = payLoad.role;
     console.log(payLoad.role);
     allowedRoles.forEach((element: any) => {
@@ -102,6 +102,11 @@ export class UserService {
 
   searchByName(name:string): Observable<Client[]>{
     return this.http.get<Client[]>(this.BaseURI+ '/client/retrieve-client-by-name/'+name);
+
+  }
+
+  searchByid(id:number): Observable<Client>{
+    return this.http.get<Client>(this.BaseURI+ '/client/retrieve-client-by-id/'+id);
 
   }
 

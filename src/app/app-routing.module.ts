@@ -9,6 +9,9 @@ import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { PostComponent } from './post/post.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { SearchUserComponent } from './search-user/search-user.component';
+import { TravelDetailComponent } from './travel-detail/travel-detail.component';
 import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
 import { TravelComponent } from './travel/travel.component';
 import { LoginComponent } from './user/login/login.component';
@@ -33,6 +36,9 @@ const routes: Routes = [
   {path:'invitations',component:InvitationsComponent,canActivate:[AuthGuard],data :{permittedRoles:['ROLE_ENTREPRISE'] }},
   {path:"invitation/:id", component:InvitationComponent},
   {path:"mostlikedpost", component:BestpostComponent},
+  {path:"userSearch/:name", component:SearchUserComponent},
+  {path:"profiles/:id", component:ProfilesComponent},
+  {path:"travelDetails/:id", component:TravelDetailComponent},
 ];
 
 @NgModule({
