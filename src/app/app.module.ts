@@ -36,7 +36,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { InvitationComponent } from './invitation/invitation.component';
@@ -68,6 +67,15 @@ import { TravelDetailComponent } from './travel-detail/travel-detail.component';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
+
+    ComplainListComponent,
+    AddComplainComponent,
+
+    ComplainListComponent,
+    AddComplainComponent,
+
+
+
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -78,6 +86,10 @@ import { TravelDetailComponent } from './travel-detail/travel-detail.component';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
+
+
+
+
     CommentComponent,
     TravelEmployeeComponent,
     BestpostComponent,
@@ -88,6 +100,7 @@ import { TravelDetailComponent } from './travel-detail/travel-detail.component';
     TravelDetailComponent,
     
     
+
   ],
   imports: [
     MatMenuModule,
@@ -107,8 +120,12 @@ import { TravelDetailComponent } from './travel-detail/travel-detail.component';
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
+
+    
+
     FontAwesomeModule,
     MatProgressSpinnerModule,
+
     MatListModule,
     DataTablesModule,
     MatSelectModule,

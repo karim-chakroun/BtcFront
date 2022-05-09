@@ -27,18 +27,36 @@ const routes: Routes = [
     {path:'login',component:LoginComponent}
   ]},
   {path:'home',component:HomeComponent},
+
+  
+
+
+  {path:'complainList',component:ComplainListComponent},
+  {path:'addcomplain',component:AddComplainComponent},
+
+
   
   {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]},
+
   {path:'post',component:PostComponent},
   {path:'travel',component:TravelComponent ,canActivate:[AuthGuard],data :{permittedRoles:['ROLE_ENTREPRISE'] }},
   {path:'travelEmployee',component:TravelEmployeeComponent ,canActivate:[AuthGuard],data :{permittedRoles:['ROLE_EMPLOYEE'] }},
   {path:"changePassword/:id", component:ChangePasswordComponent},
+
+  
+
+
+
   {path:'invitations',component:InvitationsComponent,canActivate:[AuthGuard],data :{permittedRoles:['ROLE_ENTREPRISE'] }},
   {path:"invitation/:id", component:InvitationComponent},
   {path:"mostlikedpost", component:BestpostComponent},
+
   {path:"userSearch/:name", component:SearchUserComponent},
   {path:"profiles/:id", component:ProfilesComponent},
   {path:"travelDetails/:id", component:TravelDetailComponent},
+
+
+
 ];
 
 @NgModule({
