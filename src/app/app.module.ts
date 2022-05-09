@@ -28,6 +28,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ProfilComponent } from './profil/profil.component';
+
+import { ComplainListComponent } from './complain-list/complain-list.component';
+import { AddComplainComponent } from './add-complain/add-complain.component';
+
 import { PostComponent } from './post/post.component';
 import { AddpostsComponent } from './addposts/addposts.component';
 import { TravelComponent } from './travel/travel.component';
@@ -41,19 +45,37 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { InvitationComponent } from './invitation/invitation.component';
 import { InvitationsComponent } from './invitations/invitations.component';
 import { DataTableModule } from "ng2-data-table";
-import {DataTablesModule} from 'angular-datatables';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { CommentComponent } from './comment/comment.component';
-import { TravelEmployeeComponent } from './travel-employee/travel-employee.component';
-import { BestpostComponent } from './bestpost/bestpost.component';
-import { ChoseDomainComponent } from './chose-domain/chose-domain.component';
-import { ChoseProfessionComponent } from './chose-profession/chose-profession.component';
-import {MatMenuModule} from '@angular/material/menu';
-
-
-
-
-
+import { ProjectComponent } from './project/project.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { TaskComponent } from './task/task.component';
+import { EntrepriseComponent } from './entreprise/entreprise.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
+import { AddTaskComponent } from './task/add-task/add-task.component';
+import { AssignProjectToEntrepriseComponent } from './project/assign-project-to-entreprise/assign-project-to-entreprise.component';
+import { AffectEmployeeToProjectComponent } from './project/affect-employee-to-project/affect-employee-to-project.component';
+import { AddPrimeComponent } from './project/add-prime/add-prime.component';
+import { RejectProjectComponent } from './project/reject-project/reject-project.component';
+import { DownloadExcelComponent } from './project/download-excel/download-excel.component';
+import { SendEmailComponent } from './project/send-email/send-email.component';
+import { AssignTaskToEmployeeComponent } from './task/assign-task-to-employee/assign-task-to-employee.component';
+import { EndTaskComponent } from './task/end-task/end-task.component';
+import  {  RetrieveParticipationComponent} from'./project/retrieve-participation/retrieve-participation.component';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { SyncfusionComponent } from './syncfusion/syncfusion.component';
+import { ScheduleModule, RecurrenceEditorModule , WeekService, WorkWeekService,MonthService,MonthAgendaService, DayService} from '@syncfusion/ej2-angular-schedule';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction';
+import { VoirPlusTaskComponent } from './task/voir-plus-task/voir-plus-task.component';
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,15 +86,8 @@ import {MatMenuModule} from '@angular/material/menu';
     RegistrationComponent,
     HomeComponent,
     ProfilComponent,
-
     ComplainListComponent,
     AddComplainComponent,
-
-    ComplainListComponent,
-    AddComplainComponent,
-
-
-
     PostComponent,
     AddpostsComponent,
     TravelComponent,
@@ -83,21 +98,25 @@ import {MatMenuModule} from '@angular/material/menu';
     ChangePasswordComponent,
     InvitationComponent,
     InvitationsComponent,
-
-
-
-
-    CommentComponent,
-    TravelEmployeeComponent,
-    BestpostComponent,
-    ChoseDomainComponent,
-    ChoseProfessionComponent,
-    
-    
-
+    ProjectComponent,
+    EmployeeComponent,
+    TaskComponent,
+    EntrepriseComponent,
+    AddProjectComponent,
+    AddTaskComponent,
+    AssignProjectToEntrepriseComponent,
+    AffectEmployeeToProjectComponent,
+    AddPrimeComponent,
+    RejectProjectComponent,
+    DownloadExcelComponent,
+    SendEmailComponent,
+    AssignTaskToEmployeeComponent,
+    EndTaskComponent,
+    RetrieveParticipationComponent,
+    SyncfusionComponent,
+    VoirPlusTaskComponent,
   ],
   imports: [
-    MatMenuModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -114,26 +133,31 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSidenavModule,
     MatDatepickerModule,
     MatIconModule,
-
-    
-
-    FontAwesomeModule,
-    MatProgressSpinnerModule,
-
     MatListModule,
-    DataTablesModule,
     MatSelectModule,
     HttpClientModule,
+    CommonModule,
+    MatProgressBarModule,
+    FullCalendarModule,
+    ScheduleModule, RecurrenceEditorModule,
     ToastrModule.forRoot({
       progressBar: true
     }),
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    NgbModule,
   ],
-  providers: [UserService, {
-    provide : HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  }
-  ],
+  providers: [UserService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

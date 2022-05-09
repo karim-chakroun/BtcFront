@@ -1,34 +1,10 @@
 <app-header></app-header>
-<div class="container">
-    <div align="center">
-        <div *ngIf="userDetails && userDetails.occ == 5  ">
-            <button (click)="openDialog()" mat-raised-button color="primary" [disabled]="true">Add Post</button>
-        </div>
-        <div *ngIf="userDetails && userDetails.occ != 5  ">
-            <button (click)="openDialog()" mat-raised-button color="primary" >Add Post</button>
-        </div>
-        <button routerLink="/mostlikedpost" routerLinkActive="active" mat-raised-button color="primary">most liked
-            posts</button>
-    </div>
+<div class="container" >
+    <button (click)="openDialog()" mat-raised-button color="primary">Add Post</button>
 
     <div *ngFor="let p of posts">
         <p>
             <mat-card class="example-card">
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_vert</mat-icon>
-                </button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item (click)="deletepost(p.idPost)">
-
-                        <span>delete</span>
-                    </button>
-
-                    <button mat-menu-item>
-
-                        <span>edit</span>
-                    </button>
-                </mat-menu>
-
                 <mat-card-title>{{p.titre}}</mat-card-title>
                 <mat-card-subtitle>{{p.datePost}}</mat-card-subtitle>
                 <mat-card-content>
@@ -37,38 +13,11 @@
 
                 </mat-card-content>
                 <mat-card-actions>
-                    <button (click)="addlikes(p.idPost,userDetails.idClient)" mat-button>LIKE</button>
-                    <button mat-button (click)="showComments()">COMMENTS</button>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
                 </mat-card-actions>
-
-                <div *ngFor="let c of comments">
-
-                    <mat-card class="example-card" *ngIf="c.posts.idPost == p.idPost">
-
-                        {{c.body}}
-                        {{c.posts.idPost}}
-                    </mat-card>
-                </div>
-
-
-
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Leave a comment</mat-label>
-
-
-                    <form class="example-form" [formGroup]="cService.formModel"
-                        (submit)="onSubmit(p.idPost,userDetails.idClient)">
-                        <div class="form-group">
-                            <textarea matInput placeholder="" formControlName="Bb"></textarea>
-                        </div>
-                        <button type="submit" mat-raised-button color="warn"
-                            [disabled]="!cService.formModel.valid">comment</button>
-                    </form>
-                </mat-form-field>
-
             </mat-card>
         </p>
-
     </div>
 
 </div>

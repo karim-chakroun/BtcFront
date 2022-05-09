@@ -8,13 +8,8 @@
     <p></p>
     <p>notice: you can find the document in D:\invitationsExcel.</p>
     <p></p>
-    
-
-   
-  <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner>
-
     <h3>List of invitations</h3>
-<table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+<table class="table">
     <thead>
       <tr>
         <th scope="col">idInvitation</th>
@@ -36,7 +31,7 @@
         <td>{{i.status}}</td>
         <td>{{i.dateInvitation}}</td>
         <td>
-            <div *ngIf="i.status=='false'">
+            <div *ngIf="i.status=='true'">
                 <button (click)="resendInvitation(i.idInvitation)"  mat-raised-button color="warn">Resend invitation</button>
             </div>
             

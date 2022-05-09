@@ -1,0 +1,25 @@
+<app-header></app-header>
+<button (click)="openDialogEntreprise()" class="btn btn-success" >addNew</button>
+<table>
+<tr><th>
+    description:
+</th>
+<th>nom:</th>
+<th>date debut:</th>
+<th>operations</th>
+</tr>
+<tr *ngFor="let u of listProjects">
+    <td >{{u.description}}</td>
+    <td>{{u.nom}}</td>
+    <td>{{u.dateDebut}}</td>
+    <td> <button (click)="deleteproject(u.idProject)" class="btn btn-success" >delete</button></td>
+<td><select name="idEmployee" id="idEmployee" [(ngModel)]="selectedEmployee"  >
+    <option>select a choice</option>
+    <option *ngFor="let f of listEmployee" value="{{f.idEmployee}}" >{{f.email}}</option>
+ </select> 
+ <button (click)="AffectProjectToEmployee(u.idProjects)" class="btn btn-success" >affecter</button>
+</td>
+
+</tr>
+</table>
+<a href='http://localhost:8089/SpringMVC/project/export/excel'  class="btn btn-success">excel</a>

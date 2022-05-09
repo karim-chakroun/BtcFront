@@ -21,11 +21,10 @@ export class LoginComponent implements OnInit {
     username: '',
     password: ''
   }
-  durationInSeconds = 5;
 
   ngOnInit(): void {
     if(localStorage.getItem('token') != null)
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/accueil');
   }
 
   forgotPassword(){
@@ -45,9 +44,7 @@ export class LoginComponent implements OnInit {
     this.service.login(form.value).subscribe(
       (res: any) => {
         localStorage.setItem('token', res.data);
-        this.snackbar.open("connected", "welcom!",{
-          duration: this.durationInSeconds * 1000,
-        });
+        this.snackbar.open("connected", "welcom!");
         this.router.navigateByUrl('/home');
        // this.cookieService.set('token', res.data, 1, '/','localhost', true, "Lax");
        //this.cookieService.set('token', res.data);
