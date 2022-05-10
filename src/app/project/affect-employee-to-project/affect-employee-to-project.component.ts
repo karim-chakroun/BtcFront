@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { EmployeeService } from 'src/app/employee.service';
 import { Project } from 'src/app/entity/Project';
@@ -15,14 +16,22 @@ export class AffectEmployeeToProjectComponent implements OnInit {
   listEmployee : any;
   selectedEmployee:number;
   selectedProject:number
-  constructor(private service:ProjectService, private employeeService:EmployeeService) { }
-  AffectProjectToEmployee(){
+  listProject : any;
+  idProject:number;
+  constructor(private service:ProjectService,@Inject(MAT_DIALOG_DATA) public data: any, private employeeService:EmployeeService) { }
+  AffectProjectToEmployee(idProject,selectedEmployee){
   
-     this.service.affectProjectToEmployee(this.selectedProject,this.selectedEmployee).subscribe(data=>{console.log(this.project) 
+     this.service.affectProjectToEmployee(idProject,selectedEmployee).subscribe(data=>{console.log(this.project) 
      this.project=new Project()});
      this.ngOnInit;
     };
   ngOnInit(): void {
+    this.idProject=this.data.idProject;
+  
+    this.service.retrieveProjectById(this.idProject).subscribe(res=>{console.log(res);
+    
+      this.listProject=res
+    console});
    this.employeeService.getEmployees().subscribe(res=>{console.log(res);
     this.listEmployee=res 
     console});

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { Entreprise } from 'src/app/entity/Entreprise';
 import { Project } from 'src/app/entity/Project';
 import { EntrepriseService } from 'src/app/entreprise.service';
@@ -16,7 +18,13 @@ export class AssignProjectToEntrepriseComponent implements OnInit {
   submitted=false;
   listEntreprise : any;
   selectedEntreprise:number;
-  constructor(private router:Router,private service:ProjectService, private serviceEntreprise:EntrepriseService) { }
+  constructor(private router:Router,private service:ProjectService, private serviceEntreprise:EntrepriseService,private _ngZone: NgZone) { }
+  @ViewChild('autosize') autosize: CdkTextareaAutosize;
+
+  triggerResize() {
+    // Wait for changes to be applied, then trigger textarea resize.
+    this._ngZone.onStable.pipe(take(1)).subscribe(() => this.autosize.resizeToFitContent(true));
+  }
   addAssignProject(){
   
      this.service.AssignProjectToEntreprise(this.project,this.selectedEntreprise).subscribe(data=>{console.log(this.project) 

@@ -1,5 +1,43 @@
 <app-header></app-header>
-<button (click)="openDialogEntreprise()" class="btn btn-success" >addNew</button>
+<mat-card align="left" >
+  <mat-card-title>Employee Of The Month</mat-card-title>
+  <mat-card-subtitle></mat-card-subtitle>
+  <mat-card-actions align="end">
+    <button mat-button (click)=" openDialogSEmployee()">check</button>
+
+  </mat-card-actions>
+</mat-card>
+<div class="container">
+  
+    <div class="cards grid-row" >
+      <div class="card" *ngFor="let u of listProjects">
+    
+   
+ 
+<mat-card class="example-card">
+<br>
+    <mat-card-subtitle >Projet</mat-card-subtitle>
+    <mat-card-title style="color:#213f77 ;">{{u.nom}}</mat-card-title>
+    <mat-card-content>
+      <p>{{u.description}}</p>
+      <p>{{ longText }}</p>
+
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button (click)="openDialogEmployee(u.idProject)">voir plus </button>
+      <button  (click)="deleteproject(u.idProject)"  mat-button>delete</button>
+      <button  (click)="openDialogEdit(u.idProject)"  mat-button>Edit</button>
+
+    </mat-card-actions>
+   
+  </mat-card>
+</div></div>
+</div>
+<button (click)="openDialogEntreprise()" mat-button>Add New</button>
+        <!--  
+<div>
+
 <table>
 <tr><th>
     description:
@@ -22,4 +60,4 @@
 
 </tr>
 </table>
-<a href='http://localhost:8089/SpringMVC/project/export/excel'  class="btn btn-success">excel</a>
+<a href='http://localhost:8089/SpringMVC/project/export/excel'  class="btn btn-success">excel</a></div>-->

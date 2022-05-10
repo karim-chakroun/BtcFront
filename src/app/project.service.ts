@@ -29,6 +29,10 @@ ListId:number[];
   getProjects() : Observable<any> {
     return this.http.get<any>(this.projectsUrl);
     }
+    retrieveProjectById(idProject: number)
+{
+  return this.http.get("http://localhost:8089/SpringMVC/project/retrieve-project/"+idProject);
+}
   addProject(project:Project){
       return this.http.post<Project>("http://localhost:8089/SpringMVC/project/add-projects",project);
       }
@@ -65,6 +69,11 @@ return this.http.post<Project>("http://localhost:8089/SpringMVC/project/add-proj
           {
             return  this.http.request("http://localhost:8089/SpringMVC/project/sendHtmlEmail/"+idEntreprise,"/"+idProject);
           }
+          getStarEmployee()
+          {
+            return this.http.get<any>("http://localhost:8089/SpringMVC/project/retrieve-getEmployeeStar");
+          }
+          
         
       
      

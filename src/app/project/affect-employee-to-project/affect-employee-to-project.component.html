@@ -1,12 +1,31 @@
-<div class="body">
-    <form class="form-horizontal" (ngSubmit)="AffectProjectToEmployee()">
-<div class="row clearfix">
-    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-    <label for="nom">employee</label>
+<div >
+   <tr>
+      <td><p>Nom:</p></td>
+      <td> <p>{{listProject.nom}}</p></td>
+      
+
+  </tr>
+  <tr>      <td><p>Description:</p></td>
+
+  <td> <p>{{listProject.description}}</p></td>
+  </tr>
+  <tr>    <td>libelle: </td>
+        <td> <p>{{listProject.libelle}}</p></td>
+  </tr>
+  
+      <tr><td>Intervenant:    </td>
+         <td> <p>{{listProject.intervenant}}</p></td></tr>  
+         <tr>     <td>Budget: </td>
+              <td> <p>{{listProject.budget}}</p></td>
+         </tr>
+    <form class="form-horizontal" (ngSubmit)="AffectProjectToEmployee(idProject,selectedEmployee)">
+<div >
+    <div >
+    <label for="nom">Employee</label>
     </div>
-    <div class="col-lg-10 col-md-10 col-sm-8 col- xs-7">
- <div class="form-group">
-    <div class="form-line">
+    <div >
+ <div >
+    <div >
        <select name="idEmployee" id="idEmployee" [(ngModel)]="selectedEmployee"  >
           <option>select a choice</option>
           <option *ngFor="let u of listEmployee" value="{{u.idEmployee}}" >{{u.email}}</option>

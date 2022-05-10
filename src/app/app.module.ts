@@ -49,17 +49,11 @@ import { ProjectComponent } from './project/project.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { TaskComponent } from './task/task.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
-import { AddProjectComponent } from './project/add-project/add-project.component';
 import { AddTaskComponent } from './task/add-task/add-task.component';
 import { AssignProjectToEntrepriseComponent } from './project/assign-project-to-entreprise/assign-project-to-entreprise.component';
 import { AffectEmployeeToProjectComponent } from './project/affect-employee-to-project/affect-employee-to-project.component';
-import { AddPrimeComponent } from './project/add-prime/add-prime.component';
-import { RejectProjectComponent } from './project/reject-project/reject-project.component';
 import { DownloadExcelComponent } from './project/download-excel/download-excel.component';
-import { SendEmailComponent } from './project/send-email/send-email.component';
 import { AssignTaskToEmployeeComponent } from './task/assign-task-to-employee/assign-task-to-employee.component';
-import { EndTaskComponent } from './task/end-task/end-task.component';
-import  {  RetrieveParticipationComponent} from'./project/retrieve-participation/retrieve-participation.component';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -72,6 +66,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
 import interactionPlugin from '@fullcalendar/interaction';
 import { VoirPlusTaskComponent } from './task/voir-plus-task/voir-plus-task.component';
+import { EditProjectComponent } from './project/edit-project/edit-project.component';
+import { GetStarEmployeeComponent } from './project/get-star-employee/get-star-employee.component';
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -102,19 +98,20 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     EmployeeComponent,
     TaskComponent,
     EntrepriseComponent,
-    AddProjectComponent,
     AddTaskComponent,
     AssignProjectToEntrepriseComponent,
     AffectEmployeeToProjectComponent,
-    AddPrimeComponent,
-    RejectProjectComponent,
+    
+  
     DownloadExcelComponent,
-    SendEmailComponent,
+    
     AssignTaskToEmployeeComponent,
-    EndTaskComponent,
-    RetrieveParticipationComponent,
     SyncfusionComponent,
     VoirPlusTaskComponent,
+    EditProjectComponent,
+    GetStarEmployeeComponent,
+   
+ 
   ],
   imports: [
     BrowserModule,

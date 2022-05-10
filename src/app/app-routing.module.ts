@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:'employees',component:AffectEmployeeToProjectComponent},
   {path:'download',component:DownloadExcelComponent},
 {path:'schedular', component:SyncfusionComponent},
-{path:'tasks',component:TaskComponent}
+{path:'tasks',component:TaskComponent},
 ];
 
 @NgModule({
