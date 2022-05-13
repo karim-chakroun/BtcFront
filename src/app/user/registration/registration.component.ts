@@ -21,13 +21,15 @@ export class RegistrationComponent implements OnInit {
       (res: any) => {
         if (res.status==200) {
           this.service.formModel.reset();
-          this.toastr.success('New user created!', 'Registration successful.');
+          //this.toastr.success('New user created!', 'Registration successful.');
+          this.snackbar.open('New user created!', "Registration successful.");
         } else  if (res.data=="Mail already exists") {
           
-                this.toastr.error('Email is already taken','Registration failed.');
+               // this.toastr.error('Email is already taken','Registration failed.');
+                this.snackbar.open('Email is already taken', "Registration failed");
                
         } else {
-            this.toastr.error(res.message,'Registration failed.');
+           // this.toastr.error(res.message,'Registration failed.');
             this.snackbar.open(res.message, "Registration failed");
             }
           });

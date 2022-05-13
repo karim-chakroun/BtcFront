@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InvitationService } from '../shared/invitation.service';
 import {Subject} from 'rxjs';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-invitations',
@@ -10,7 +11,7 @@ import {Subject} from 'rxjs';
 })
 export class InvitationsComponent implements OnInit {
 
-  constructor(private service:InvitationService,private snackbar:MatSnackBar) { }
+  constructor(private service:InvitationService,private snackbar:MatSnackBar,public uService:UserService) { }
   invitations;
 
  

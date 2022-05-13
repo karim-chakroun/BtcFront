@@ -27,7 +27,7 @@
                 <h4>{{user.nom}} {{user.prenom}}</h4>
                 <p class="text-secondary mb-1">Full Stack Developer</p>
                 <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button mat-raised-button color="primary">Follow</button>
+                <button (click)="follow(user.idClient,userDetails.idClient)" mat-raised-button color="primary">Follow</button>
                 <button mat-stroked-button>Message</button>
               </div>
             </div>
@@ -113,7 +113,7 @@
                 <h6 class="mb-0">Date de Naissance</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                {{user.dateNaissance}}
+                {{user.dateNaissance|date:"dd/MM/yyyy"}}
               </div>
             </div>
             <hr>
@@ -124,28 +124,14 @@
                   <h6 class="mb-0">Domaine d'activité</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <div *ngIf="user.profession==null">
-  
-                    <button mat-stroked-button color="primary" >Chose your Profession</button>
-                  </div>
+                  
                   {{user.profession}}
                 </div>
               </div>
             </div>
             <div >
 
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">Domaine d'activité</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  <div *ngIf="user.domain==null">
-  
-                    
-                  </div>
-                  {{user.domain}}
-                </div>
-              </div>
+              
             </div>
             
             <hr>

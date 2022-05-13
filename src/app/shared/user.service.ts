@@ -62,7 +62,7 @@ export class UserService {
     var isMatch = false;
     var payLoad = JSON.parse(window.atob(this.cookieService.get('token').split('.')[1]));
     var userRole = payLoad.role;
-    console.log(payLoad.role);
+    //console.log(payLoad.role);
     allowedRoles.forEach((element: any) => {
       if (userRole == element) {
         isMatch = true;
@@ -109,6 +109,35 @@ export class UserService {
     return this.http.get<Client>(this.BaseURI+ '/client/retrieve-client-by-id/'+id);
 
   }
+  follow(id1,id2)
+  {
+    var body = {
+      
+      
+    };
+    return this.http.post(this.BaseURI + '/Follow/ajoutFollow/' + id1+ '/' +id2,body);
+  }
 
+  getAllUser(){
+    
+    return this.http.get(this.BaseURI+ '/client/retrieve-all-clients');
+  }
 
+  getIdFollowers(id:number){
+    return this.http.get(this.BaseURI+ '/Follow/retrieve-ids/'+id);
+
+  }
+
+  unfollow(id){
+    return this.http.delete(this.BaseURI+ '/Follow/remove-follow/' + id);
+  }
+  getAllFollowers(){
+    return this.http.get(this.BaseURI+ '/Follow/retrieve-all');
+
+  }
+
+  getBannedUsers(){
+    
+    return this.http.get(this.BaseURI+ '/client/retrieve-banned');
+  }
 }

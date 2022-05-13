@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router,private cookieService: CookieService) { }
 
   ngOnInit(): void {
+  }
+
+  onLogout() {
+    //localStorage.removeItem('token');
+    this.cookieService.delete("token", '/');
+    
+    
+    this.router.navigate(['/user/login']);
+    
+    // var v = document.getElementById('admin');
+     //  var v2 = document.getElementById('admin2');
+      // v.style.visibility = 'hidden';
+   // v2.style.visibility = 'hidden';
+    // var f = document.getElementById('loginBtn');
+       //f.style.visibility = 'hidden';
   }
 
 }

@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<br>
 <div class="container">
 
   <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
@@ -22,9 +22,9 @@
 
         <td>{{travel.depVille}}</td>
         <td>{{travel.desVille}}</td>
-        <td>{{travel.dateDep}}</td>
-        <td>{{travel.dateDest}}</td>
-        <td>{{travel.dateRetour}}</td>
+        <td>{{travel.dateDep|date:"dd/MM/yyyy"}}</td>
+        <td>{{travel.dateDest|date:"dd/MM/yyyy"}}</td>
+        <td>{{travel.dateRetour|date:"dd/MM/yyyy"}}</td>
         <td>{{travel.nbIntervenant}}</td>
         <td>{{travel.object}}</td>
         <td>
@@ -52,7 +52,7 @@
 
 
         </td>
-        <td> <a mat-card-title [routerLink]="['/travelDetails',travel.idVoyage]">Details</a> </td>
+        <td> <button mat-raised-button color="Basic" [routerLink]="['/travelDetails',travel.idVoyage]">Details</button> </td>
       </tr>
 
     </tbody>

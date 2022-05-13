@@ -1,7 +1,12 @@
-<app-header></app-header>
+<app-header *ngIf="!uService.roleMatch(['ROLE_ENTREPRISE'])"></app-header>
+<app-sidebar *ngIf="uService.roleMatch(['ROLE_ENTREPRISE'])"></app-sidebar>
 
+<br>
 <div class="container">
-<button (click)="openDialog()" mat-raised-button color="primary">Add Travel</button>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+      <button (click)="openDialog()" mat-raised-button color="primary">Add Travel</button>
 <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
     <thead>
       <tr>
@@ -20,9 +25,9 @@
         
         <td>{{travel.depVille}}</td>
         <td>{{travel.desVille}}</td>
-        <td>{{travel.dateDep}}</td>
-        <td>{{travel.dateDest}}</td>
-        <td>{{travel.dateRetour}}</td>
+        <td>{{travel.dateDep|date:"dd/MM/yyyy"}}</td>
+        <td>{{travel.dateDest|date:"dd/MM/yyyy"}}</td>
+        <td>{{travel.dateRetour|date:"dd/MM/yyyy"}}</td>
         <td>{{travel.nbIntervenant}}</td>
         <td>{{travel.object}}</td>
         
@@ -30,4 +35,8 @@
      
     </tbody>
   </table>
+
+    </div>
+  </div>
+
 </div>

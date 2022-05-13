@@ -1,5 +1,7 @@
 <app-header></app-header>
-<h1 *ngIf="invitation">Congrats {{invitation.fullName}} you have accepted the invitation to make an account visit this link :</h1>
+<div class="container">
+<h1 *ngIf="invitation">Congrats {{invitation.fullName}} you have accepted the invitation to make an account you must fill the form :</h1>
+
 
 <form [formGroup]="uService.formModel" autocomplete="on" (submit)="onSubmit(invitation.idInvitation)">
     <div class="form-group required">
@@ -48,9 +50,11 @@
 
     <div class="form-row">
         <div class="form-group col-md-8 offset-md-2">
-            <button type="submit" class="btn btn-lg btn-block" >
+            <button type="submit" mat-raised-button color="primary" >
                 Sign Up
             </button>
         </div>
     </div>
 </form>
+</div>
+<app-footer></app-footer>

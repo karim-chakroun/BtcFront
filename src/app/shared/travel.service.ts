@@ -28,6 +28,10 @@ export class TravelService {
     return this.http.get(this.BaseURI+ '/voyage/retrieve-all-voyages');
   }
 
+  getStats(){
+    return this.http.get(this.BaseURI+ '/voyage/statisticnbVoyageParticipation');
+  }
+
   addTravel(){
     var body = {
       depVille: this.formModel.value.DepVille,

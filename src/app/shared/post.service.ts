@@ -49,4 +49,11 @@ export class PostService {
   deletepost(id){
     return this.http.delete(this.BaseURI+ '/post/remove-post/' + id);
   }
+
+  sendEmailBanned(){
+    return this.http.get(this.BaseURI+ '/post/send');
+  }
+
+
+  
 }

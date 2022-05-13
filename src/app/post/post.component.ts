@@ -13,12 +13,13 @@ import { UserService } from '../shared/user.service';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private service:PostService,public dialog: MatDialog,private uService:UserService,private imageService:ImageService,public cService:CommentService) { }
+  constructor(private service:PostService,public dialog: MatDialog,public uService:UserService,private imageService:ImageService,public cService:CommentService) { }
   posts:any;
   userDetails;
   dbImage: any; 
   comments;
   postResponse: any;
+  prop1 : string;
   ngOnInit(): void {
     this.service.getposts().subscribe(
       res =>{

@@ -50,6 +50,10 @@ export class LoginComponent implements OnInit {
         this.snackbar.open("connected", "welcom!",{
           duration: this.durationInSeconds * 1000,
         });
+        if (this.service.roleMatch(['ROLE_ENTREPRISE'])) {
+          this.router.navigateByUrl('/homeBack');
+        }
+        else if(this.service.roleMatch(['ROLE_EMPLOYEE']))
         this.router.navigateByUrl('/home');
        // this.cookieService.set('token', res.data, 1, '/','localhost', true, "Lax");
        //this.cookieService.set('token', res.data);

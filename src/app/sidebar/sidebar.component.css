@@ -53,6 +53,15 @@ body {
     color: rgba(0, 0, 0, .85);
     background-color: #d2f4ea;
   }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; /* Behind the navbar */
+    padding: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  }
   
   .btn-toggle::before {
     width: 1.25em;
@@ -83,6 +92,11 @@ body {
   
   .scrollarea {
     overflow-y: auto;
+  }
+  #sidebar {
+    -moz-box-shadow:    -3px 0 5px 0 #555;
+    -webkit-box-shadow: -3px 0 5px 0 #555;
+    box-shadow:         -3px 0 5px 0 #555;
   }
   
   .fw-semibold { font-weight: 600; }
